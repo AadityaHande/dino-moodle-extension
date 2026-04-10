@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "DINO - Moodle Guide",
+  "description": "Smart Moodle course organiser with admission-year-based semester detection, drag & drop, confidence scoring, and bulk editor.",
+  "version": "3.0",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "host_permissions": ["*://moodle.mitaoe.ac.in/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/branding/dino.png"],
+      "matches": ["*://moodle.mitaoe.ac.in/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://moodle.mitaoe.ac.in/*"],
+      "js": ["content.js"],
+      "css": ["dino.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
